@@ -20,6 +20,17 @@ export const Show = () => {
                         //  onPress={handleSubmit}
                         style={({ pressed }) => [
                            {
+                              backgroundColor: pressed ? "#ffe200" : "#ffc900",
+                           },
+                           styles.button,
+                        ]}
+                     >
+                        <Text style={styles.text}>Edit</Text>
+                     </Pressable>
+                     <Pressable
+                        //  onPress={handleSubmit}
+                        style={({ pressed }) => [
+                           {
                               backgroundColor: pressed ? "#ff5243" : "#fb2f19",
                            },
                            styles.button,

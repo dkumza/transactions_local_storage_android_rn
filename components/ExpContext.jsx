@@ -30,9 +30,9 @@ export const ExpProvider = ({ children }) => {
       const updatedExpenses = [...expenses, newExp];
       await AsyncStorage.setItem("expenses", JSON.stringify(updatedExpenses));
       setExpenses(updatedExpenses);
-      console.log(expenses);
+      //   console.log(expenses);
    };
-   console.log(expenses);
+   //    console.log(expenses);
 
    return (
       <ExpContext.Provider
