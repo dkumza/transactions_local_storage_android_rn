@@ -10,32 +10,32 @@ import {
 import { ExpContext } from "./ExpContext";
 
 export const Input = () => {
-   const { number, setNumber } = useContext(ExpContext);
+   const { newName, setNewName, newNumber, setNewNumber, handleSubmit } =
+      useContext(ExpContext);
 
    return (
       <SafeAreaView style={styles.container}>
          <Text style={styles.wrapName}>Add new Transaction</Text>
-         {/* <Text>{number}</Text> */}
+         <Text>{newName}</Text>
+         <Text>{newNumber}</Text>
          <View style={styles.wrapper}>
             <TextInput
-               style={[styles.input, { flex: 2 }]}
+               style={[styles.input, { flex: 4 }]}
                placeholder="Transaction Name"
                keyboardType="default"
-               value={number}
-               onChangeText={setNumber}
+               value={newName}
+               onChangeText={setNewName}
             />
             <TextInput
                style={[styles.input, { flex: 1 }]}
                placeholder="Amount"
                keyboardType="numeric"
-               value={number}
-               onChangeText={setNumber}
+               value={newNumber}
+               onChangeText={setNewNumber}
             />
          </View>
          <Pressable
-            // onPress={() => {
-            //    setTimesPressed((current) => current + 1);
-            // }}
+            onPress={handleSubmit}
             style={({ pressed }) => [
                {
                   backgroundColor: pressed ? "#54c2ff" : "#418fff",
@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
    container: {
       width: "75%",
       display: "flex",
+      paddingVertical: 40,
       alignItems: "center",
    },
 
