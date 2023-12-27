@@ -2,6 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, SafeAreaView } from "react-native";
 import { Input } from "./components/Input";
 import { ExpProvider } from "./components/ExpContext";
+import { Show } from "./components/Show";
 
 export default function App() {
    return (
@@ -10,6 +11,7 @@ export default function App() {
             <Text style={styles.title}>Expenses Tracker</Text>
             <StatusBar style="default" />
             <Input />
+            <Show />
          </SafeAreaView>
       </ExpProvider>
    );

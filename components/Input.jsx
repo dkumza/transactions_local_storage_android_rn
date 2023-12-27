@@ -16,8 +16,7 @@ export const Input = () => {
    return (
       <SafeAreaView style={styles.container}>
          <Text style={styles.wrapName}>Add new Transaction</Text>
-         <Text>{newName}</Text>
-         <Text>{newNumber}</Text>
+
          <View style={styles.wrapper}>
             <TextInput
                style={[styles.input, { flex: 4 }]}
