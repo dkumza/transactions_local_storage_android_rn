@@ -1,5 +1,7 @@
 # Transactions /w React Native
 
+Very first app to play with react native
+<br>
 Android app - user inputs transaction and after submit transaction appears in DOM.
 
 ### TODO
