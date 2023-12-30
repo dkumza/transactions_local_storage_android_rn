@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState } from 'react';
 import {
    StyleSheet,
    SafeAreaView,
@@ -6,12 +6,16 @@ import {
    Text,
    View,
    Pressable,
-} from "react-native";
-import { ExpContext } from "./ExpContext";
+} from 'react-native';
+import { ExpContext } from './ExpContext';
+
+import { Picker } from '@react-native-picker/picker';
 
 export const Input = () => {
    const { newName, setNewName, newNumber, setNewNumber, handleSubmit } =
       useContext(ExpContext);
+
+   const [selectedLanguage, setSelectedLanguage] = useState();
 
    return (
       <SafeAreaView style={styles.container}>
@@ -37,7 +41,7 @@ export const Input = () => {
             onPress={handleSubmit}
             style={({ pressed }) => [
                {
-                  backgroundColor: pressed ? "#54c2ff" : "#418fff",
+                  backgroundColor: pressed ? '#54c2ff' : '#418fff',
                },
                styles.button,
             ]}
@@ -50,35 +54,37 @@ export const Input = () => {
 
 const styles = StyleSheet.create({
    container: {
-      width: "75%",
-      display: "flex",
+      width: '75%',
+      display: 'flex',
       paddingVertical: 40,
-      alignItems: "center",
+      alignItems: 'center',
    },
 
    wrapName: {
-      textAlign: "left",
-      width: "100%",
+      textAlign: 'left',
+      width: '100%',
       paddingBottom: 5,
    },
    wrapper: {
-      display: "flex",
+      display: 'flex',
       //   width: "100%",
-      flexDirection: "row",
-      justifyContent: "center",
+      flexDirection: 'row',
+      justifyContent: 'center',
       gap: 5,
    },
    input: {
       height: 40,
       //   width: "60%",
+      backgroundColor: 'white',
       marginBottom: 15,
+      borderColor: '#bcbcbc',
       borderWidth: 1,
       borderRadius: 5,
       padding: 10,
    },
    button: {
-      alignItems: "center",
-      justifyContent: "center",
+      alignItems: 'center',
+      justifyContent: 'center',
       paddingVertical: 8,
       paddingHorizontal: 24,
       borderRadius: 4,
@@ -88,8 +94,8 @@ const styles = StyleSheet.create({
    text: {
       fontSize: 16,
       lineHeight: 21,
-      fontWeight: "bold",
+      fontWeight: 'bold',
       letterSpacing: 0.25,
-      color: "white",
+      color: 'white',
    },
 });

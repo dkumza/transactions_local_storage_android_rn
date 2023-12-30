@@ -1,9 +1,10 @@
-import { useContext } from "react";
-import { ExpContext } from "./ExpContext";
-import { View, Text, StyleSheet, Pressable } from "react-native";
+import { useContext } from 'react';
+import { ExpContext } from './ExpContext';
+import { View, Text, StyleSheet, Pressable } from 'react-native';
 
 export const Show = () => {
    const { expenses } = useContext(ExpContext);
+
    return (
       <View style={styles.showWrap}>
          <Text style={{ marginBottom: 2.5 }}>Transactions</Text>
@@ -15,12 +16,16 @@ export const Show = () => {
                <View key={exp.id} style={styles.liItems}>
                   <Text>{exp.newName.toUpperCase()}</Text>
                   <View style={styles.liItems1}>
-                     <Text>{exp.newNumber} EUR</Text>
-                     <Pressable
+                     <Text
+                        style={{ color: exp.newNumber > 0 ? 'green' : 'red' }}
+                     >
+                        € {exp.newNumber}
+                     </Text>
+                     {/* <Pressable
                         //  onPress={handleSubmit}
                         style={({ pressed }) => [
                            {
-                              backgroundColor: pressed ? "#ffe200" : "#ffc900",
+                              backgroundColor: pressed ? '#ffe200' : '#ffc900',
                            },
                            styles.button,
                         ]}
@@ -31,13 +36,13 @@ export const Show = () => {
                         //  onPress={handleSubmit}
                         style={({ pressed }) => [
                            {
-                              backgroundColor: pressed ? "#ff5243" : "#fb2f19",
+                              backgroundColor: pressed ? '#ff5243' : '#fb2f19',
                            },
                            styles.button,
                         ]}
                      >
                         <Text style={styles.text}>Delete</Text>
-                     </Pressable>
+                     </Pressable> */}
                   </View>
                </View>
             ))}
@@ -47,35 +52,37 @@ export const Show = () => {
 
 const styles = StyleSheet.create({
    showWrap: {
-      width: "75%",
-      color: "black",
-      display: "flex",
+      width: '75%',
+      // color: 'black',
+      display: 'flex',
    },
 
    liItems: {
-      display: "flex",
+      display: 'flex',
       borderWidth: 1,
       borderRadius: 5,
-      flexDirection: "row",
-      justifyContent: "space-between",
-      alignContent: "center",
-      alignItems: "center",
+      borderColor: '#f2f1ef',
+      backgroundColor: 'white',
+      flexDirection: 'row',
+      justifyContent: 'space-between',
+      alignContent: 'center',
+      alignItems: 'center',
       marginVertical: 2.5,
-      paddingHorizontal: 5,
-      paddingLeft: 10,
-      paddingVertical: 5,
+      paddingHorizontal: 10,
+      // paddingLeft: 10,
+      paddingVertical: 10,
    },
    liItems1: {
-      display: "flex",
-      flexDirection: "row",
-      justifyContent: "flex-end",
-      alignContent: "center",
-      alignItems: "center",
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'flex-end',
+      alignContent: 'center',
+      alignItems: 'center',
       gap: 10,
    },
    button: {
-      alignItems: "center",
-      justifyContent: "center",
+      alignItems: 'center',
+      justifyContent: 'center',
       paddingVertical: 3,
       paddingHorizontal: 12,
       borderRadius: 5,
@@ -85,8 +92,8 @@ const styles = StyleSheet.create({
    text: {
       //   fontSize: 16,
       lineHeight: 21,
-      fontWeight: "semibold",
+      fontWeight: 'semibold',
       //   letterSpacing: 0.25,
-      color: "white",
+      color: 'white',
    },
 });
